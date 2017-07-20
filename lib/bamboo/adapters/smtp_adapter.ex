@@ -196,7 +196,7 @@ defmodule Bamboo.SMTPAdapter do
     |> add_multipart_delimiter(multi_part_mixed_delimiter)
     |> add_attachment_header(attachment)
     |> add_smtp_line("")
-    |> add_attachment_body(attachment.data)
+    |> add_attachment_body(attachment)
   end
 
   defp add_attachments(body, %Bamboo.Email{attachments: nil}, _), do: body
